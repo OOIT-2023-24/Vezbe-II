@@ -2,6 +2,8 @@ package main;
 
 import java.util.Scanner;
 
+import geometry.Point;
+
 public class Main {
 	
 
@@ -62,19 +64,35 @@ public class Main {
 //		System.out.println(sumaParnihBrojeva);
 		
 		//ZADATAK 2 - Ispis parnih godina od 2023. do 2100. godine
-		for(int godina = 2023; godina<=2100; godina = godina+4) {
-			if(godina == 2023) {
-				godina++;
-			}
-			else if(godina%100 == 0) {
-				if(godina%400 == 0) {
-					System.out.println(godina);
-				}else {
-					continue;
-				}
-			}
-			System.out.println(godina);
-		}
+//		for(int godina = 2023; godina<=2100; godina = godina+4) {
+//			if(godina == 2023) {
+//				godina++;
+//			}
+//			else if(godina%100 == 0) {
+//				if(godina%400 == 0) {
+//					System.out.println(godina);
+//				}else {
+//					continue;
+//				}
+//			}
+//			System.out.println(godina);
+//		}
+		
+		//VEZBE 3 - OOP
+		int broj = 20; // primitivna promenljiva
+		System.out.println("Primitivna promenljiva uvek vraca svoju vrednost: " + broj);
+		Point p1 = new Point(); // Slozena promenljiva - promenljiva tipa reference - referenca
+		System.out.println("Referenca sadrzi: " + p1);
+		System.out.println("Vrednost atributa x objekta na koji pokazuje referenca p1: " + p1.getX());
+		System.out.println("Vrednost atributa selected objekta na koji pokazuje referenca p1: " + p1.isSelected());
+		//p1.x = 55;
+		p1.setX(20);
+		p1.setY(10);
+		Point p2 = new Point();
+		p2.setX(10);
+		p2.setY(10);
+		System.out.println("Udaljenost izmedju tacki p1 i p2 je: " + p1.distance(p2));
+		
 	}
 
 }
