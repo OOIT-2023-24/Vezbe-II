@@ -1,8 +1,9 @@
 package main;
 
-import java.util.Scanner;
-
+import geometry.Circle;
+import geometry.Line;
 import geometry.Point;
+import geometry.Rectangle;
 
 public class Main {
 	
@@ -79,20 +80,39 @@ public class Main {
 //		}
 		
 		//VEZBE 3 - OOP
-		int broj = 20; // primitivna promenljiva
-		System.out.println("Primitivna promenljiva uvek vraca svoju vrednost: " + broj);
+		//int broj = 20; // primitivna promenljiva
+		//System.out.println("Primitivna promenljiva uvek vraca svoju vrednost: " + broj);
 		Point p1 = new Point(); // Slozena promenljiva - promenljiva tipa reference - referenca
-		System.out.println("Referenca sadrzi: " + p1);
-		System.out.println("Vrednost atributa x objekta na koji pokazuje referenca p1: " + p1.getX());
-		System.out.println("Vrednost atributa selected objekta na koji pokazuje referenca p1: " + p1.isSelected());
+		// Referenca p1 pokazuje na objekat tipa Point - Objekat 1
+		//System.out.println("Referenca sadrzi: " + p1);
+		//System.out.println("Vrednost atributa x objekta na koji pokazuje referenca p1: " + p1.getX());
+		//System.out.println("Vrednost atributa selected objekta na koji pokazuje referenca p1: " + p1.isSelected());
 		//p1.x = 55;
 		p1.setX(20);
 		p1.setY(10);
-		Point p2 = new Point();
+		Point p2 = new Point(); //Pokazuje na objekat tipa Point - Objekat 2
 		p2.setX(10);
 		p2.setY(10);
-		System.out.println("Udaljenost izmedju tacki p1 i p2 je: " + p1.distance(p2));
+		//System.out.println("Udaljenost izmedju tacki p1 i p2 je: " + p1.distance(p2));
 		
+		Line l1 = new Line(); // Pokazuje na objekat tipa Line - Objekat 3
+		System.out.println(l1);
+		System.out.println(l1.getStartPoint());
+		System.out.println(l1.getEndPoint());
+		l1.setStartPoint(p1);
+		System.out.println(l1.getStartPoint().getX());
+		
+		Line l2 = new Line(p1,p2,true);
+		System.out.println(l2.getEndPoint().getY());
+		Rectangle r1 = new Rectangle(new Point(50,50),30,30);
+		Circle c1 = new Circle(l2.getEndPoint(), 40);
+		
+		System.out.println("Tri reference pokazuju na isti objekat");
+		p2.setX(100);
+		c1.getCenter().setX(150);
+		System.out.println(p2.getX());
+		System.out.println(l2.getEndPoint().getX());
+		System.out.println(c1.getCenter().getX());
 	}
 
 }
