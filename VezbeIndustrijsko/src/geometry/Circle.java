@@ -2,9 +2,9 @@ package geometry;
 
 public class Circle {
 
-	private Point center;
-	private int radius;
-	private boolean selected;
+	protected Point center;
+	protected int radius;
+	protected boolean selected;
 	
 	public Circle() {
 		
@@ -28,6 +28,15 @@ public class Circle {
 		return 2 * radius * Math.PI;
 	}
 	
+	public boolean contains(int x, int y) {
+		return center.distance(new Point(x,y)) <= radius;
+	}
+	
+	//Overloading
+	public boolean contains(Point p) {
+		return contains(p.getX(), p.getY());
+	}
+	
 	@Override
 	public String toString() {
 		return "Center: (" + center.getX() + "," + center.getY() + "), radius = " + radius;
@@ -37,7 +46,7 @@ public class Circle {
 	public boolean equals(Object o) {
 		if(o instanceof Circle) {
 			Circle temp = (Circle)o;
-			if(radius == temp.getRadius()) {
+			if(radius == temp.getRadius() && center.equals(temp.getCenter())) {
 				return true;
 			}
 		}

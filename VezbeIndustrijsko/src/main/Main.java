@@ -1,16 +1,15 @@
 package main;
 
 import geometry.Circle;
-import geometry.Line;
+import geometry.Donut;
 import geometry.Point;
-import geometry.Rectangle;
 
 public class Main {
 	
 
 	public static void main(String[] args) {
 		
-//		int brojJedan = 1; //default 0
+		int brojJedan = 1;
 //		double decimalniBroj = 1.5; // default 0.0
 //		boolean check = true; // default false
 //		char a = 'a';
@@ -22,6 +21,7 @@ public class Main {
 //				+ "koju zelite da izvrsite");
 //		Scanner scanner = new Scanner(System.in);
 //		char operacija = scanner.next().charAt(0);
+//		System.out.println(operacija);
 		
 		//PETLJE
 		
@@ -116,16 +116,26 @@ public class Main {
 		
 		// VEZBE 5 - Klasa Object i overriding
 		
-		Point p1 = new Point();
-		System.out.println("Rad metode toString(): " + p1.toString());
-		//System.out.println("Vrednost reference: " + p1);
-		Line l1 = new Line(p1, new Point(10,20));
-		//System.out.println("Rad metode toString(): " + l1.toString());
-		Point p2 = new Point();
-		System.out.println("Rad metode toString(): " + p2.toString());
-		//p1 = p2; // Nakon ove instrukcije p1 pokazuje na isti objekat
-		//kao i p2
-		System.out.println(p1.equals(l1));
+//		Point p1 = new Point();
+//		System.out.println("Rad metode toString(): " + p1.toString());
+//		//System.out.println("Vrednost reference: " + p1);
+//		Line l1 = new Line(p1, new Point(10,20));
+//		//System.out.println("Rad metode toString(): " + l1.toString());
+//		Point p2 = new Point();
+//		System.out.println("Rad metode toString(): " + p2.toString());
+//		//p1 = p2; // Nakon ove instrukcije p1 pokazuje na isti objekat
+//		//kao i p2
+//		
+//		
+//		Rectangle r1 = new Rectangle(new Point(50,50),20,30);
+//		System.out.println(r1.getHeigth());
+//		System.out.println(r1.isSelected());
+//		System.out.println(r1.getUpperLeft());
+		
+		
+		// Vezbe 6
+		Donut d1 = new Donut(new Point(0,0),30,20);
+		System.out.println(d1.toString());
 	}
 
 }
