@@ -6,4 +6,5 @@
  *
  */
 module VezbeIndustrijsko {
+	requires java.desktop;
 }

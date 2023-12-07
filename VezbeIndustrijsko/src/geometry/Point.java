@@ -1,10 +1,11 @@
 package geometry;
 
-public class Point {
+import java.awt.Graphics;
+
+public class Point extends Shape {
 
 	private int x;
 	private int y;
-	private boolean selected;
 	
 	public Point() {
 		
@@ -18,6 +19,13 @@ public class Point {
 	public Point(int x, int y, boolean selected) {
 		this(x,y);
 		this.selected = selected;
+	}
+	
+	@Override
+	public void draw(Graphics g) {
+		g.drawLine(x-3, y, x+3, y); // Iscrtavanje horizontalne linije duzine 6 piksela
+		g.drawLine(x, y-3, x, y+3); // Iscrtavanje vertikalne linije duzine 6 piksela
+		
 	}
 	
 	public double distance(Point p1) {
@@ -54,10 +62,6 @@ public class Point {
 		return y;
 	}
 	
-	public boolean isSelected() {
-		return selected;
-	}
-	
 	public void setX(int x) {
 		this.x = x;
 	}
@@ -65,9 +69,7 @@ public class Point {
 	public void setY(int y) {
 		this.y = y;
 	}
+
 	
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
 	
 }
