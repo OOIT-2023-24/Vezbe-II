@@ -28,6 +28,28 @@ public class Point extends Shape {
 		
 	}
 	
+	@Override
+	public void moveBy(int byX, int byY) {
+		x += byX;
+		// Isto kao i x = x + byX;
+		y += byY;
+	}
+
+	@Override
+	public void moveTo(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Point) {
+			Point temp = (Point) o;
+			return (int)(distance(new Point(0,0)) - temp.distance(new Point(0,0)));
+		}
+		return 0;
+	}
+	
 	public double distance(Point p1) {
 		int dx = this.x - p1.getX();
 		int dy = this.y - p1.getY();
@@ -70,6 +92,7 @@ public class Point extends Shape {
 		this.y = y;
 	}
 
+	
 	
 	
 }

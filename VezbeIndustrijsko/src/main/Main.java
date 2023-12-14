@@ -1,8 +1,8 @@
 package main;
 
-import geometry.Circle;
 import geometry.Donut;
 import geometry.Point;
+import geometry.Rectangle;
 
 public class Main {
 	
@@ -135,7 +135,22 @@ public class Main {
 		
 		// Vezbe 6
 		Donut d1 = new Donut(new Point(0,0),30,20);
-		System.out.println(d1.toString());
+		//System.out.println(d1.toString());
+		
+		// Vezbe 7
+//		Circle c1 = new Circle();
+//		System.out.println(c1.broj);
+//		c1.broj = 30;
+//		Circle c2 = new Circle();
+//		System.out.println(c2.broj);
+		
+		Point p1 = new Point(50,50);
+		Point p2 = new Point(60,60);
+		System.out.println(p1.compareTo(p2));
+		
+		Rectangle r1 =  new Rectangle(p1, 40,40);
+		Rectangle r2 =  new Rectangle(p2, 80,80);
+		System.out.println(r2.compareTo(r1));
 	}
 
 }
