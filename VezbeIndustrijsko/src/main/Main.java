@@ -1,5 +1,8 @@
 package main;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import geometry.Donut;
 import geometry.Point;
 import geometry.Rectangle;
@@ -146,11 +149,59 @@ public class Main {
 		
 		Point p1 = new Point(50,50);
 		Point p2 = new Point(60,60);
-		System.out.println(p1.compareTo(p2));
+		//System.out.println(p1.compareTo(p2));
 		
 		Rectangle r1 =  new Rectangle(p1, 40,40);
 		Rectangle r2 =  new Rectangle(p2, 80,80);
-		System.out.println(r2.compareTo(r1));
+		//System.out.println(r2.compareTo(r1));
+		
+		// ======VEZBE 7=======
+//		int[] nizBrojeva = new int[5];
+//		nizBrojeva[0] = 4;
+//		nizBrojeva[1] = 5;
+//		nizBrojeva[2] = 6;
+//		nizBrojeva[3] = 7;
+//		nizBrojeva[4] = 8;
+		
+		int[] nizBrojeva = {4,5,6,7,8,9,10,11,12,13};
+		for(int i = nizBrojeva.length-1; i>=0; i--) {
+			nizBrojeva[i] = nizBrojeva[i]*5;
+			// nizBrojeva[i]*=5;
+//			System.out.println("Vrednost elementa niza na "
+//					+ "indeksu " + i +" je: " + nizBrojeva[i]);
+		}
+		
+		HashMap<String,String> mapa = new HashMap<String,String>();
+		mapa.put("txt", "notepad.exe");
+		mapa.put("bmp", "paint.exe");
+		mapa.put("dib", "paint.exe");
+		mapa.put("rtf", "wordpad.exe");
+		
+		mapa.replace("rtf", "winword.exe");
+		//mapa.put("rtf", "winword.exe");
+		
+		if(!mapa.containsKey("tif")) {
+			System.out.println("Kljuc tif ne postoji u mapi");
+		}
+		if(!mapa.containsKey("ht")) {
+			mapa.put("ht", "hypertrm.exe");
+			System.out.println("Dodat je novi key value par ht:hypertrm.exe");
+		}
+		
+		for(Map.Entry<String, String> es: mapa.entrySet()) {
+			System.out.println(es);
+		}
+		
+		if(mapa.containsKey("doc")) {
+			mapa.remove("doc");
+		}else {
+			System.out.println("Key value par sa vrednoscu kljuca doc ne postoji!");
+		}
+		
+		
+		
+		
+		
 	}
 
 }
