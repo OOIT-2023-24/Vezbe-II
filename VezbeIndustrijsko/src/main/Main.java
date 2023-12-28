@@ -3,6 +3,7 @@ package main;
 import java.util.HashMap;
 import java.util.Map;
 
+import geometry.Circle;
 import geometry.Donut;
 import geometry.Point;
 import geometry.Rectangle;
@@ -141,7 +142,7 @@ public class Main {
 		//System.out.println(d1.toString());
 		
 		// Vezbe 7
-//		Circle c1 = new Circle();
+		Circle c1 = new Circle();
 //		System.out.println(c1.broj);
 //		c1.broj = 30;
 //		Circle c2 = new Circle();
@@ -155,7 +156,7 @@ public class Main {
 		Rectangle r2 =  new Rectangle(p2, 80,80);
 		//System.out.println(r2.compareTo(r1));
 		
-		// ======VEZBE 7=======
+		// ======VEZBE 8=======
 //		int[] nizBrojeva = new int[5];
 //		nizBrojeva[0] = 4;
 //		nizBrojeva[1] = 5;
@@ -181,26 +182,32 @@ public class Main {
 		//mapa.put("rtf", "winword.exe");
 		
 		if(!mapa.containsKey("tif")) {
-			System.out.println("Kljuc tif ne postoji u mapi");
+			//System.out.println("Kljuc tif ne postoji u mapi");
 		}
 		if(!mapa.containsKey("ht")) {
 			mapa.put("ht", "hypertrm.exe");
-			System.out.println("Dodat je novi key value par ht:hypertrm.exe");
+			//System.out.println("Dodat je novi key value par ht:hypertrm.exe");
 		}
 		
 		for(Map.Entry<String, String> es: mapa.entrySet()) {
-			System.out.println(es);
+			//System.out.println(es);
 		}
 		
 		if(mapa.containsKey("doc")) {
 			mapa.remove("doc");
 		}else {
-			System.out.println("Key value par sa vrednoscu kljuca doc ne postoji!");
+			//System.out.println("Key value par sa vrednoscu kljuca doc ne postoji!");
 		}
 		
 		
-		
-		
+		// ======VEZBE 9=======
+		System.out.println(c1.getRadius());
+		try {
+			c1.setRadius(0);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println(c1.getRadius());
 		
 	}
 

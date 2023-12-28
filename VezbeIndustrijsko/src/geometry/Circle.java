@@ -92,8 +92,13 @@ public class Circle extends Shape {
 		return radius;
 	}
 
-	public void setRadius(int radius) {
-		this.radius = radius;
+	public void setRadius(int radius) throws Exception {
+		if(radius <= 0) {
+			throw new Exception("Radius ne moze biti postavljen na 0 ili "
+					+ "vrednost manju od 0");
+		}else {
+			this.radius = radius;
+		}
 	}
 
 }
